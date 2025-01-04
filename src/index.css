@@ -1,0 +1,106 @@
+/* General Body Style */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f7f8fa;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Section Titles */
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #0078ff;
+  margin-bottom: 20px;
+}
+
+/* Paragraphs */
+p, ul {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Quotes */
+blockquote {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  background: #eef3f7;
+  border-left: 4px solid #0078ff;
+  padding: 10px 20px;
+  margin: 20px 0;
+  color: #444;
+}
+
+header {
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #0078ff, #00c6ff);
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+header nav a {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s ease-in-out;
+}
+header nav a:hover {
+  color: #ffeb3b;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(90deg, #0078ff, #00c6ff);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+button:hover {
+  background: linear-gradient(90deg, #00c6ff, #0078ff);
+  transform: translateY(-3px);
+}
+
+.card {
+  font-family: 'Roboto', sans-serif;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+.card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0078ff;
+}
+.card-text {
+  font-family: 'Roboto', sans-serif;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+@keyframes rotateY {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
