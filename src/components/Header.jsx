@@ -46,7 +46,7 @@ const Header = () => {
           {/* Left side: Avatar and Title */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Avatar
-              src="/PS209237.JPG"
+              src={`${process.env.PUBLIC_URL}/PS209237.JPG`}
               alt="Vasantha Kumar M"
               sx={{
                 width: 50,
@@ -60,6 +60,7 @@ const Header = () => {
                 },
               }}
             />
+
             <Typography
               variant="h6"
               sx={{
