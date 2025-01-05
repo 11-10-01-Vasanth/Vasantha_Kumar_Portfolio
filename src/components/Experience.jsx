@@ -11,6 +11,7 @@ import {
 import { keyframes } from "@mui/system";
 import { FaRegCheckCircle } from "react-icons/fa"; // Importing a check-circle icon
 import { IoMdCode } from "react-icons/io"; // Importing a code icon
+import { BsPersonLinesFill } from "react-icons/bs";
 
 const experience = [
   {
@@ -40,76 +41,187 @@ const hoverEffect = keyframes`
 
 const Experience = () => {
   return (
-    <Box
-      id="experience"
-      sx={{
-        // padding: { xs: "30px 10px", sm: "50px 20px" },
-        backgroundColor: "#f3f4f6",
-        borderRadius: "12px",
-        boxShadow: "0 6px 18px rgba(0, 0, 0, 0.15)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-      className="d-none d-lg-block"
-    >
-      <Grid
-        container
-        justifyContent="center"
-        sx={{
-          padding: "50px 20px",
-          textAlign: "center",
-          background: "linear-gradient(90deg, #6FB7FF, #A4C7FF)",
-          boxShadow: "0 4px 8px #00c6ff",
-        }}
-        spacing={4} // Adds some space between Grid items if needed
-      >
-        <Grid item xs={12}>
-          <Typography
-            variant="h4"
-            gutterBottom
-            align="center"
+    <>
+      <div id="experience">
+        <Box
+          sx={{
+            backgroundColor: "#f3f4f6",
+            borderRadius: "12px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          className="d-none d-lg-block"
+        >
+          <Grid
+            container
+            justifyContent="center"
             sx={{
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: 600,
-              padding: "10px",
-              border: "2px solid white", // Blue border
-              color: "#2a1a8c",
-              borderRadius: "8px",
-              backgroundColor: "transparent", // Transparent background so text color stands out
-              display: "inline",
+              padding: "50px 20px",
+              textAlign: "center",
+              background: "linear-gradient(90deg, #6FB7FF, #A4C7FF)",
+              boxShadow: "0 4px 8px #00c6ff",
             }}
+            spacing={4}
           >
-            Work Experience
-          </Typography>
-          <Timeline position="alternate" sx={{ padding: "0" }} className="mt-5">
+            <Grid item xs={12}>
+              <Typography
+                variant="h4"
+                gutterBottom
+                align="center"
+                sx={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: 600,
+                  padding: "10px",
+                  border: "2px solid white",
+                  color: "#2a1a8c",
+                  borderRadius: "8px",
+                  backgroundColor: "transparent",
+                  display: "inline",
+                }}
+              >
+                Work Experience
+              </Typography>
+              <Timeline
+                position="alternate"
+                sx={{ padding: "0" }}
+                className="mt-5"
+              >
+                {experience.map((item, index) => (
+                  <TimelineItem key={index}>
+                    <TimelineSeparator>
+                      <TimelineDot style={{ backgroundColor: "#2a1a8c" }}>
+                        <BsPersonLinesFill size={20} />
+                      </TimelineDot>
+                      <TimelineConnector sx={{ bgcolor: "#2a1a8c" }} />
+                    </TimelineSeparator>
+                    <TimelineContent
+                      sx={{
+                        padding: { xs: "20px", sm: "25px" },
+                        marginTop: "40px",
+                        borderRadius: "10px",
+                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                        marginBottom: "25px",
+                        transition: "transform 0.3s ease",
+                        "&:hover": {
+                          transform: "translateY(-5px)",
+                        },
+                        backgroundColor: "#B7D3FF",
+                      }}
+                    >
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontWeight: 600,
+                          color: "#2E3B4E",
+                          marginBottom: "12px",
+                          fontSize: { xs: "1.2rem", sm: "1.5rem" },
+                        }}
+                      >
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: "#555",
+                          fontStyle: "italic",
+                          marginBottom: "15px",
+                        }}
+                      >
+                        {item.company} ({item.period})
+                      </Typography>
+                      <ul style={{ paddingLeft: "20px", marginTop: "10px" }}>
+                        {item.responsibilities.map((responsibility, idx) => (
+                          <li
+                            key={idx}
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              marginBottom: "10px",
+                            }}
+                          >
+                            {idx === 0 && (
+                              <IoMdCode
+                                size={20}
+                                style={{
+                                  marginRight: "10px",
+                                  color: "#2a1a8c",
+                                }}
+                              />
+                            )}
+                            {idx === 1 && (
+                              <FaRegCheckCircle
+                                size={20}
+                                style={{
+                                  marginRight: "10px",
+                                  color: "#2a1a8c",
+                                }}
+                              />
+                            )}
+                            {idx === 2 && (
+                              <IoMdCode
+                                size={20}
+                                style={{
+                                  marginRight: "10px",
+                                  color: "#2a1a8c",
+                                }}
+                              />
+                            )}
+                            <Typography variant="body2" sx={{ color: "#555" }}>
+                              {responsibility}
+                            </Typography>
+                          </li>
+                        ))}
+                      </ul>
+                    </TimelineContent>
+                  </TimelineItem>
+                ))}
+              </Timeline>
+            </Grid>
+          </Grid>
+        </Box>
+        <Box className="d-block d-lg-none">
+          <Grid
+            container
+            sx={{
+              textAlign: "center",
+              background: "linear-gradient(90deg, #6FB7FF, #A4C7FF)",
+              borderRadius: "12px",
+              padding: "20px",
+            }}
+            spacing={4}
+          >
+            <Grid item xs={12}>
+              <Typography
+                variant="h4"
+                gutterBottom
+                sx={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: 600,
+                  color: "#2a1a8c",
+                  padding: "10px 20px",
+                  border: "2px solid white",
+                  borderRadius: "8px",
+                  backgroundColor: "transparent",
+                  display: "inline-block",
+                }}
+              >
+                Work Experience
+              </Typography>
+            </Grid>
             {experience.map((item, index) => (
-              <TimelineItem key={index}>
-                <TimelineSeparator>
-                  <TimelineDot
-                    sx={{
-                      backgroundColor: "#2a1a8c", // Applying the custom color
-                      boxShadow: "0 6px 12px rgba(0, 0, 0, 0.1)",
-                      "&:hover": {
-                        animation: `${hoverEffect} 0.5s ease-in-out`,
-                      },
-                    }}
-                  />
-
-                  <TimelineConnector sx={{ bgcolor: "#2a1a8c" }} />
-                </TimelineSeparator>
-                <TimelineContent
+              <Grid item xs={12} key={index}>
+                <Box
                   sx={{
-                    padding: { xs: "20px", sm: "25px" },
-                    marginTop: "40px",
-                    borderRadius: "10px",
+                    backgroundColor: "#B7D3FF",
+                    padding: "20px",
+                    borderRadius: "12px",
                     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-                    marginBottom: "25px",
+                    textAlign: "start",
                     transition: "transform 0.3s ease",
                     "&:hover": {
                       transform: "translateY(-5px)",
                     },
-                    backgroundColor: "#B7D3FF", // Light blue background for the card
                   }}
                 >
                   <Typography
@@ -117,8 +229,7 @@ const Experience = () => {
                     sx={{
                       fontWeight: 600,
                       color: "#2E3B4E",
-                      marginBottom: "12px",
-                      fontSize: { xs: "1.2rem", sm: "1.5rem" },
+                      marginBottom: "10px",
                     }}
                   >
                     {item.title}
@@ -143,7 +254,6 @@ const Experience = () => {
                           marginBottom: "10px",
                         }}
                       >
-                        {/* Adding icons to each responsibility */}
                         {idx === 0 && (
                           <IoMdCode
                             size={20}
@@ -168,13 +278,13 @@ const Experience = () => {
                       </li>
                     ))}
                   </ul>
-                </TimelineContent>
-              </TimelineItem>
+                </Box>
+              </Grid>
             ))}
-          </Timeline>
-        </Grid>
-      </Grid>
-    </Box>
+          </Grid>
+        </Box>
+      </div>
+    </>
   );
 };
 
