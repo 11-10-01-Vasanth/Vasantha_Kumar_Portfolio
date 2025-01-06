@@ -27,7 +27,10 @@ const Projects = () => {
         alignItems: "center",
       }}
     >
-      <Box sx={{ maxWidth: "1200px", width: "100%", textAlign: "center" }} className="mb-2 mt-3">
+      <Box
+        sx={{ width: "100%", textAlign: "center" }}
+        className="mb-2 mt-3 mx-lg-5 mx-3"
+      >
         <Typography
           variant="h4"
           gutterBottom
@@ -45,7 +48,11 @@ const Projects = () => {
         >
           Projects
         </Typography>
-        <Grid container spacing={4} justifyContent="center" className="mt-3 mb-4">
+        <Grid
+          container
+          spacing={4}
+          className="mt-3 mb-4"
+        >
           {projects.map((project, index) => (
             <Grid item xs={12} sm={6} md={6} key={index}>
               <Card

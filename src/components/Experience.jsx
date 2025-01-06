@@ -60,7 +60,7 @@ const Experience = () => {
               padding: "50px 20px",
               textAlign: "center",
               background: "linear-gradient(90deg, #6FB7FF, #A4C7FF)",
-              boxShadow: "0 4px 8px #00c6ff",
+              // boxShadow: "0 4px 8px #00c6ff",
             }}
             spacing={4}
           >
@@ -186,7 +186,6 @@ const Experience = () => {
             sx={{
               textAlign: "center",
               background: "linear-gradient(90deg, #6FB7FF, #A4C7FF)",
-              borderRadius: "12px",
               padding: "20px",
             }}
             spacing={4}
