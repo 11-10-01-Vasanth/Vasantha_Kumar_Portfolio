@@ -11,7 +11,7 @@ const About = () => {
       sx={{
         background: "linear-gradient(90deg, #6FB7FF, #A4C7FF)", 
         color: "#333", 
-        padding: { xs: "40px 20px", sm: "60px 30px", md: "80px 40px" },
+        padding: { xs: "30px 20px", sm: "50px 30px", md: "70px 40px" },
         textAlign: "center",
         position: "relative",
         overflow: "hidden",

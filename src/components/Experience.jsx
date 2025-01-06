@@ -98,10 +98,10 @@ const Experience = () => {
                     <TimelineContent
                       sx={{
                         padding: { xs: "20px", sm: "25px" },
-                        marginTop: "40px",
+                        marginTop: "60px",
                         borderRadius: "10px",
                         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-                        marginBottom: "25px",
+                        marginBottom: "20px",
                         transition: "transform 0.3s ease",
                         "&:hover": {
                           transform: "translateY(-5px)",

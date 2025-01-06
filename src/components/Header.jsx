@@ -13,6 +13,7 @@ import {
   Avatar,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -79,20 +80,16 @@ const Header = () => {
           {/* Right side: Hamburger Menu (Mobile) */}
           <Box sx={{ display: { xs: "block", md: "none" } }}>
             <IconButton
-              color="inherit"
-              edge="end"
-              onClick={toggleDrawer(true)}
+              onClick={toggleDrawer(!drawerOpen)}
               sx={{
-                "& svg": {
-                  animation: "wiggle 0.5s infinite",
-                  "@keyframes wiggle": {
-                    "0%, 100%": { transform: "rotate(0deg)" },
-                    "50%": { transform: "rotate(15deg)" },
-                  },
-                },
+                background: "linear-gradient(90deg, #2a1a8c, #6c63ff)",
               }}
             >
-              <MenuIcon sx={{ color: "#FFEB3B", fontSize: "2rem" }} />
+              {drawerOpen ? (
+                <CloseIcon sx={{ color: "#FFEB3B", fontSize: "2rem" }} />
+              ) : (
+                <MenuIcon sx={{ color: "#FFEB3B", fontSize: "2rem" }} />
+              )}
             </IconButton>
           </Box>
 
@@ -160,7 +157,7 @@ const Header = () => {
           <List>
             {sections.map((section) => (
               <ListItem
-                button
+                button={true} // Explicitly define `button` as boolean
                 component="a"
                 href={`#${section.toLowerCase()}`}
                 key={section}

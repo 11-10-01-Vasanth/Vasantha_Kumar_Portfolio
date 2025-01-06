@@ -5,7 +5,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import { Button } from "@mui/material";
+import { Fab } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 const App = () => {
@@ -45,26 +45,23 @@ const App = () => {
       <Contact />
 
       {showScroll && (
-        <Button
+        <Fab
+          color="primary"
           onClick={scrollToTop}
           sx={{
             position: "fixed",
             bottom: "20px",
             right: "20px",
-            background: "linear-gradient(90deg, #2a1a8c, #6c63ff)",
+            background: "linear-gradient(90deg, #2a1a8c, #6c63ff)", // Custom gradient
             color: "white",
-            borderRadius: "50%",
-            width: "50px",
-            height: "50px",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-            zIndex: 1000,
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)", // Shadow
             "&:hover": {
-              backgroundColor: "#005bb5",
+              backgroundColor: "#005bb5", // Hover color
             },
           }}
         >
           <ArrowUpwardIcon />
-        </Button>
+        </Fab>
       )}
     </div>
   );

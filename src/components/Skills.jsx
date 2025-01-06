@@ -47,7 +47,7 @@ const Skills = () => {
       sx={{
         background: "linear-gradient(90deg, #6FB7FF, #A4C7FF)", // Light blue gradient for the background
         color: "#2E3B4E", // Darker text for better readability
-        padding: { xs: "40px 20px", sm: "60px 30px", md: "80px 40px" },
+        padding: { xs: "20px 10px", sm: "10px 30px", md: "30px 20px" },
         textAlign: "center",
         position: "relative",
         overflow: "hidden",

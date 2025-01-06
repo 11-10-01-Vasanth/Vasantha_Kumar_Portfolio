@@ -27,7 +27,7 @@ const Projects = () => {
         alignItems: "center",
       }}
     >
-      <Box sx={{ maxWidth: "1200px", width: "100%", textAlign: "center" }} className="mb-5 mt-5">
+      <Box sx={{ maxWidth: "1200px", width: "100%", textAlign: "center" }} className="mb-2 mt-3">
         <Typography
           variant="h4"
           gutterBottom
